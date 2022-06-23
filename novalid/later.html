@@ -1,0 +1,44 @@
+<body  onload="init();">
+    <table class="calculator-grid">
+      <tr>
+        <td><button id="empty"></button></td>
+        <td><button id="reset" onclick="calculator.clear()">C</button></td>
+        <td><button id="empty"></button></td>
+        <td><button id="division" onclick="calculator.chooseOperation('/')">/</button></td>
+      </tr>
+      <tr>
+        <td><button id="seven" onclick="calculator.appendNumber('7')">7</button></td>
+        <td><button id="eight" onclick="calculator.appendNumber('8')">8</button></td>
+        <td><button id="nine" onclick="calculator.appendNumber('9')">9</button></td>
+        <td><button id="multiplication" onclick="calculator.chooseOperation('*')">*</button></td>
+      </tr>
+      <tr>
+        <td><button id="four" onclick="calculator.appendNumber('4')">4</button></td>
+        <td><button id="five" onclick="calculator.appendNumber('5')">5</button></td>
+        <td><button id="six" onclick="calculator.appendNumber('6')">6</button></td>
+        <td><button id="resta" onclick="calculator.chooseOperation('-')">-</button></td>
+      </tr>
+      <tr>
+        <td><button id="one" onclick="calculator.appendNumber('1')">1</button></td>
+        <td><button id="two" onclick="calculator.appendNumber('2')">2</button></td>
+        <td><button id="three" onclick="calculator.appendNumber('3')">3</button></td>
+        <td><button id="sum" onclick="calculator.chooseOperation('+')">+</button></td>
+      </tr>
+      <tr>
+        <td><button id="empty"></button></td>
+        <td><button id="zero">0</button></td>
+        <td><button id="comma" onclick="calculator.appendNumber('.')">.</button></td>
+        <td><button id="equal" onclick="calculator.appendNumber()">=</button></td>
+      </tr>
+      <tr>
+        <td colspan="4"><div class="previouoperand"></div></td>
+      </tr>
+      <tr>
+        <td colspan="4"><div class="currentoperand"></div></td>
+      </tr>
+      <tr>
+        <td colspan="4"><div class="output"></div></td>
+      </tr>
+    </table>
+    <script src="script.js"></script>
+  </body>
