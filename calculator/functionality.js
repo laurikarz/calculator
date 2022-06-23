@@ -1,7 +1,11 @@
+var firstNum;
+var secondNum;
+var operation;
+
 function init(){
 
     //variables
-    var output = document.getElementsByClassName("output");
+    var result = document.getElementById("result");
     var reset = document.getElementById("reset");
     var sum = document.getElementById("sum");
     var resta = document.getElementById("resta");
@@ -19,38 +23,99 @@ function init(){
     var nine = document.getElementById("nine");
     var zero = document.getElementById("zero");
     var comma = document.getElementById("comma");
-    var previousOperand = document.getElementsByClassName("previousoperand");
-    var currentOperand = document.getElementsByClassName("currentoperand");
 
-    //Events
+    //Events - Numbers
     one.onclick = function(e){
-        previousOperand.TextContent = previousOperand + "1";
+        result.textContent = result.textContent + "1";
     }
     two.onclick = function(e){
-        previousOperand.TextContent = previousOperand + "2";
+        result.textContent = result.textContent + "2";
     }
     three.onclick = function(e){
-        previousOperand.TextContent = previousOperand + "3";
+        result.textContent = result.textContent + "3";
     }
     four.onclick = function(e){
-        previousOperand.TextContent = previousOperand + "4";
+        result.textContent = result.textContent + "4";
     }
     five.onclick = function(e){
-        previousOperand.TextContent = previousOperand + "5";
+        result.textContent = result.textContent + "5";
     }
     six.onclick = function(e){
-        previousOperand.TextContent = previousOperand + "6";
+        result.textContent = result.textContent + "6";
     }
     seven.onclick = function(e){
-        previousOperand.TextContent = previousOperand + "7";
+        result.textContent = result.textContent + "7";
     }
     eight.onclick = function(e){
-        previousOperand.TextContent = previousOperand + "8";
+        result.textContent = result.textContent + "8";
     }
     nine.onclick = function(e){
-        previousOperand.TextContent = previousOperand + "9";
+        result.textContent = result.textContent + "9";
     }
     zero.onclick = function(e){
-        previousOperand.TextContent = previousOperand + "0";
+        result.textContent = result.textContent + "0";
     }
+
+    //Events - Operations
+    reset.onclick = function(e){
+        resetFunct();
+    }
+    sum.onclick = function(e){
+        firstNum = result.textContent;
+        operation = '+';
+        clean();
+    }
+    resta.onclick = function(e){
+        firstNum = result.textContent;
+        operation = '-';
+        clean();
+    }
+    multiplication.onclick = function(e){
+        firstNum = result.textContent;
+        operation = '*';
+        clean();
+    }
+    division.onclick = function(e){
+        firstNum = result.textContent;
+        operation = '/';
+        clean();
+    }
+    equal.onclick = function(e){
+        secondNum = result.textContent;
+        solution();
+    }
+    comma.onclick = function(e){
+        //result.textContent = result.textContent + "0";
+    }
+}
+
+function resetFunct(){
+    result.textContent = "";
+    firstNum = 0;
+    secondNum = 0;
+    operation= "";
+}
+
+function clean(){
+    result.textContent = "";
+}
+
+function solution(){
+    var total = 0;
+    switch (operation) {
+        case "+":
+            total = parseFloat(firstNum) + parseFloat(secondNum);
+            break;
+        case "-":
+            total = parseFloat(firstNum) - parseFloat(secondNum);
+            break; 
+        case "*":
+            total = parseFloat(firstNum) * parseFloat(secondNum);
+            break; 
+        case "/":
+            total = parseFloat(firstNum) / parseFloat(secondNum);
+            break;
+    }
+    resetFunct();
+    result.textContent = total;
 }
