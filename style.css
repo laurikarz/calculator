@@ -1,51 +1,56 @@
 *, *::before, *::after {
     box-sizing: border-box;
-    font-family: Gotham Rounded, sans-serif;
-    font-weight: normal;
+    font-family: cursive;
+    font-weight: bold;
 }
 
-body {
-    margin: 0;
-    padding: 0;
-    background: linear-gradient(to right, #CBCE91FF, #EA738DFF);
+.calculator-grid{
+  display: block;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: rgb(223, 108, 192);
+  width: 200px;
+  height: 350px;
+  border-radius: 25px;
 }
 
-.calculator-grid > button {
-    cursor: pointer;
-    font-size: 2rem;
-    border: 1px, solid #FFFFFF;
-    outline: none;
-    background-color: rbga(255, 255, 255, 0.75);
-  }
+.calculator-grid td button{
+  display: block;
+  width: 35px;
+  height: 35px;
+  font-size: 15px;
+}
 
-    .calculator-grid > button:hover {
-      background-color: #a9a9a9;
-    }
+.output{
+  background-color: rgb(210, 245, 8);
+  display: block;
+  text-align: center;
+  font-size: 20px;
+  line-height: 25px;
+  width: 150px;
+  height: 25px;
+  border-radius: 25px;
+}
 
-    .span-two {
-      grid-column: span 2;
-      color: #adf802;
-      background-color: rgba(139, 0, 139, 0.8);
-    }
+.previous-operand{
+  display: block;
+  text-align: center;
+  font-size: 20px;
+  margin-top: 20px;
+  line-height: 25px;
+  background-color: rgb(12, 246, 242);
+  width: 150px;
+  height: 25px;
+  border-radius: 25px;
+}
 
-    .output{
-      grid-column: 1 / -1;
-      background-color: rgba(0, 0, 0, 0.75);
-      display: flex;
-      align-items: flex-end;
-      justify-content: space-around;
-      flex-direction: column;
-      padding: 10px;
-      word-wrap: break-word;
-      word-break: break-all;
-    }
-
-    .output .previous-operand{
-      color: rgba(255,255, 255, 0.75);
-      font-size: 1.5rem;
-    }
-
-    .output .current-operand{
-      color: white;
-      font-size: 2.5rem;
-    }
+.current-operand{
+  display: block;
+  text-align: center;
+  font-size: 20px;
+  line-height: 25px;
+  background-color: rgb(12, 246, 242);
+  width: 150px;
+  height: 25px;
+  border-radius: 25px;
+}
