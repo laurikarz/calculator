@@ -26,34 +26,44 @@ function init(){
 
     //Events - Numbers
     one.onclick = function(e){
-        result.textContent = result.textContent + "1";
+        if (checkLimit(result.textContent))
+            result.textContent = result.textContent + "1";
     }
     two.onclick = function(e){
-        result.textContent = result.textContent + "2";
+        if (checkLimit(result.textContent))
+            result.textContent = result.textContent + "2";
     }
     three.onclick = function(e){
-        result.textContent = result.textContent + "3";
+        if (checkLimit(result.textContent))
+            result.textContent = result.textContent + "3";
     }
     four.onclick = function(e){
-        result.textContent = result.textContent + "4";
+        if (checkLimit(result.textContent))
+            result.textContent = result.textContent + "4";
     }
     five.onclick = function(e){
-        result.textContent = result.textContent + "5";
+        if (checkLimit(result.textContent))
+            result.textContent = result.textContent + "5";
     }
     six.onclick = function(e){
-        result.textContent = result.textContent + "6";
+        if (checkLimit(result.textContent))
+            result.textContent = result.textContent + "6";
     }
     seven.onclick = function(e){
-        result.textContent = result.textContent + "7";
+        if (checkLimit(result.textContent))
+            result.textContent = result.textContent + "7";
     }
     eight.onclick = function(e){
-        result.textContent = result.textContent + "8";
+        if (checkLimit(result.textContent))
+            result.textContent = result.textContent + "8";
     }
     nine.onclick = function(e){
-        result.textContent = result.textContent + "9";
+        if (checkLimit(result.textContent))
+            result.textContent = result.textContent + "9";
     }
     zero.onclick = function(e){
-        result.textContent = result.textContent + "0";
+        if (checkLimit(result.textContent))    
+            result.textContent = result.textContent + "0";
     }
 
     //Events - Operations
@@ -85,8 +95,19 @@ function init(){
         solution();
     }
     comma.onclick = function(e){
-        //result.textContent = result.textContent + "0";
+        if(checkLimit(result.textContent))
+            if(result.textContent !== "") 
+                (result.textContent = result.textContent + ".");
+            else
+                (result.textContent = "0" + ".");
     }
+}
+
+function checkLimit(number){
+    var limit = 10;
+    if (number.length < limit)
+        return true;
+    return false;
 }
 
 function resetFunct(){
@@ -117,5 +138,6 @@ function solution(){
             break;
     }
     resetFunct();
-    result.textContent = total;
+    
+    (checkLimit(total)) ? result.textContent = total : result.textContent = Math.round(total*100)/100;
 }
